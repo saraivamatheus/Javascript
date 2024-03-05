@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual país você mora?</title>
+</head>
+<body>
+    <h1>Qual país você mora?</h1>
+    <p>Digite seu país:</p><input type="text" name="pais" id="pais"> <input type="button" value="enviar" onclick="clicar()">
+    <div id="res">
+
+    </div>
+
+    <script>
+        var pais = window.document.querySelector('input#pais')
+        var res = window.document.querySelector('div#res')
+        function clicar(){
+            var pais = window.document.getElementByq('pais')
+            var res = window.document.getElementById('res')
+            if (pais != 'Brasil'){
+                res.innerHTML += <p> tu adora boquete </p>
+                res.style.background = 'Blue'
+            } else {
+                res.innerHTML += <p> Tu é estranho </p>
+                res.style.background = 'Red'
+            }
+        }
+
+    </script>
+
+</body>
+</html>
