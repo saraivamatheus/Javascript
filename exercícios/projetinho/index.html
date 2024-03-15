@@ -6,9 +6,21 @@
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="/exercícios/projetinho/js.js"></script>
 </head>
 <body>
+    <script>
+        var contador = 0;
+        function gerar(){
+            contador++;
+            var jogo = {};
+            var numero = [];
+            for(i = 0; i < 5; i++){
+                numero.push(Math.floor(Math.random() * 60) + 1);
+            }
+            concat(jogo, numero);
+
+        }
+    </script>
     <div id="menu" class="w-full h-10 flex justify-center bg-blue-300 fixed">
         <ul class="flex">
             <li class="px-4 py-2 ">Home</li>
@@ -20,16 +32,18 @@
     </div>
     <div id="container" class="flex h-full w-full bg-red-200 justify-center items-center">
         <div id="site" class="flex flex-col h-2/3 w-2/3 bg-green-300 justify-center items-center">
-            <div id="menudentro" class="flex w-2/3 h-8 bg-gray-400">
+            <div id="menudentro" class="flex w-2/3 h-8 bg-gray-400 justify-center">
+                <h1 class="text-2xl">Loteria</h1>
             </div>
             <div id="meio" class="flex h-full w-2/3">
-                <div class="bg-pink-300 h-full w-1/2">
+                <div class="bg-pink-300 h-full w-1/2 flex flex-col items-center justify-center">
+                    <h2 class="text-xl">Clique para gerar uma quina: </h2>
+                    <input onclick="gerar()" class="hover:bg-green-300 bg-pink-300 w-[60px] h-[40px] rounded shadow-lg" type="button" value="gerar">
                 </div>
-                <div class="bg-yellow-400 h-full w-1/2">
+                <div id="resultado" class="bg-yellow-400 h-full w-1/2">
                 </div>
             </div>
         </div>
     </div>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste quidem vero laborum tempora consequuntur, dolore, corporis accusantium distinctio ducimus a quas dolor iusto similique reprehenderit dignissimos consequatur atque quam veritatis!</p>
 </body>
 </html>
