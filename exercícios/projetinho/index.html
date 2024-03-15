@@ -3,47 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Orçamento</title>
+    <link rel="shortcut icon" href="chapeu-de-graduacao.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-gray-600">
     <script>
-        var contador = 0;
-        function gerar(){
-            contador++;
-            var jogo = {};
-            var numero = [];
-            for(i = 0; i < 5; i++){
-                numero.push(Math.floor(Math.random() * 60) + 1);
-            }
-            concat(jogo, numero);
 
-        }
     </script>
-    <div id="menu" class="w-full h-10 flex justify-center bg-blue-300 fixed">
-        <ul class="flex">
-            <li class="px-4 py-2 ">Home</li>
-            <li class="px-4 py-2 ">Sobre nós</li>
-            <li class="px-4 py-2 ">Contato</li>
-            <li class="px-4 py-2 ">Outro</li>
+    <header id="icones" class="flex flex-rowreverse">
+        <ul>
+            <li>Login</li>
+            <li></li>
+            <li></li>
+            <li><img src="chapeu-de-graduacao.png" alt=""></li>
         </ul>
+    </header>
+    <main>
 
-    </div>
-    <div id="container" class="flex h-full w-full bg-red-200 justify-center items-center">
-        <div id="site" class="flex flex-col h-2/3 w-2/3 bg-green-300 justify-center items-center">
-            <div id="menudentro" class="flex w-2/3 h-8 bg-gray-400 justify-center">
-                <h1 class="text-2xl">Loteria</h1>
-            </div>
-            <div id="meio" class="flex h-full w-2/3">
-                <div class="bg-pink-300 h-full w-1/2 flex flex-col items-center justify-center">
-                    <h2 class="text-xl">Clique para gerar uma quina: </h2>
-                    <input onclick="gerar()" class="hover:bg-green-300 bg-pink-300 w-[60px] h-[40px] rounded shadow-lg" type="button" value="gerar">
-                </div>
-                <div id="resultado" class="bg-yellow-400 h-full w-1/2">
-                </div>
-            </div>
-        </div>
-    </div>
+    </main>
+    <footer class="bg-black">
+        <p class="text-center text-white">Direitos reservados a &copy; Matheus Saraiva.</p>
+    </footer>
 </body>
 </html>
