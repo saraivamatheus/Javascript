@@ -6,24 +6,44 @@
     <title>Orçamento</title>
     <link rel="shortcut icon" href="chapeu-de-graduacao.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-600">
     <script>
 
     </script>
-    <header id="icones" class="flex flex-rowreverse">
-        <ul>
-            <li>Login</li>
-            <li></li>
-            <li></li>
-            <li><img src="chapeu-de-graduacao.png" alt=""></li>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+        }
+    </style>
+    <header id="icones" class="flex flex-row-reverse ">
+        <ul class="flex ">
+            <li class="p-3 pt-4 px-2 "><a href="login.html" class="hover:underline">Login</a></li>
+            <li class="p-3 pt-4 px-2"><a href="https://www.google.com/imghp?hl=pt-BR&tab=ri&authuser=0&ogbl" class="hover:underline">imagens</a></li>
+            <li class="p-3 pt-4 px-2"><img src="aplicativos.png"></li>
+            <li class="p-3 pt-4 px-2"><img src="chapeu-de-graduacao.png"></li>
         </ul>
     </header>
-    <main>
-
+    <h1 class="text-center text-5xl pt-10 font-mono">Orçamento de Sites</h1>
+    <main class="flex h-full w-full items-center justify-center">
+        <div id="site" class="flex h-2/3 w-2/3 bg-gray-200 rounded-xl shadow-lg">
+            <label for="sites"></label>
+            <input type="number" name="sites" id="sites">
+            <input type="button" value="Adicionar">
+            <label for="dados"></label>
+            <input type="number" name="dados" id="dados">
+            <label for="paginas"></label>
+            <input type="number" name="paginas" id="paginas">
+        </div>
     </main>
-    <footer class="bg-black">
-        <p class="text-center text-white">Direitos reservados a &copy; Matheus Saraiva.</p>
+    <footer class="bg-black h-[60px]">
+        <p class="text-center pt-[20px] text-white">Direitos reservados a &copy; Matheus Saraiva.</p>
     </footer>
 </body>
 </html>
