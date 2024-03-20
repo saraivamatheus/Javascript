@@ -10,8 +10,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-600">
+<body class="bg-gray-800">
     <script>
+        var lista = {
+            nome: "Alunos",
+            alunos: ["Matheus", "Alexandre", "Pedro", "Yuri", "Arthur", "Andre", "Athos"],
+            aprovados: [],
+            reprovados: [],
+            notas: [7, 5, 8, 4, 2, 3, 4]
+        }
+
+        function valor(){
+            var qprodutos = document.getElementById('valor').value;
+            var input = document.getElementById('produtos');
+            for(c = 0; c < qprodutos; c++){
+                input.innerHTML += `<label id="nsites" for="sites" class="text-center text-xl mb-3">Valor do produto ${c + 1}:</label>  <input class="mx-auto w-2/3" type="number" name="valorproduto" onkeyup="guardar()" id="valorproduto${c}">`;
+            }      
+            if (qprodutos == 0){
+                input.innerHTML = '';
+            }
+        }
+
+        function guardar(){
+            var valores = [document.getElementById(`valorproduto${c}`.value)];
+            var soma = 0;
+        }
+
+        function terminar(){
+            for (c = 0; c < valores.length; c++){
+                soma += valores[c];
+            }
+            var resultado = document.getElementById('final');
+            resultado.innerHTML = soma;
+        }
 
     </script>
     <style>
@@ -24,24 +55,30 @@
     </style>
     <header id="icones" class="flex flex-row-reverse ">
         <ul class="flex ">
-            <li class="p-3 pt-4 px-2 "><a href="login.html" class="hover:underline">Login</a></li>
-            <li class="p-3 pt-4 px-2"><a href="https://www.google.com/imghp?hl=pt-BR&tab=ri&authuser=0&ogbl" class="hover:underline">imagens</a></li>
+            <li class="p-3 pt-4 px-2 "><a href="login.html" class="text-lg hover:underline text-white">Login</a></li>
+            <li class="p-3 pt-4 px-2"><a href="https://www.google.com/imghp?hl=pt-BR&tab=ri&authuser=0&ogbl" class="text-lg text-white hover:underline">imagens</a></li>
             <li class="p-3 pt-4 px-2"><img src="aplicativos.png"></li>
-            <li class="p-3 pt-4 px-2"><img src="chapeu-de-graduacao.png"></li>
+            <li class="p-3 pt-4 px-2 mr-5"><img src="chapeu-de-graduacao.png"></li>
         </ul>
     </header>
-    <h1 class="text-center text-5xl pt-10 font-mono">Orçamento de Sites</h1>
+    <h1 class="text-center text-gray-300 text-5xl pt-10 font-mono">Preço de produtos</h1>
     <main class="flex h-full w-full items-center justify-center">
-        <div id="site" class="flex h-2/3 w-2/3 bg-gray-200 rounded-xl shadow-lg">
-            <label for="sites"></label>
-            <input type="number" name="sites" id="sites">
-            <input type="button" value="Adicionar">
-            <label for="dados"></label>
-            <input type="number" name="dados" id="dados">
-            <label for="paginas"></label>
-            <input type="number" name="paginas" id="paginas">
+        <div id="site" class="flex flex-col h-2/3 w-2/3 bg-gray-200 rounded-xl shadow-lg justify-center">
+                <label id='nsites' for="sites" class="text-center text-xl mb-3">Quantidade de produtos:</label>
+                <input class="mx-auto w-2/3" type="number" id="valor" onkeyup="valor()" autofocus>
+                <div id="produtos" class="flex flex-col justify-center">
+
+                </div>
+                <input type="button" value="terminar" onclick="terminar()">
         </div>
     </main>
+    <div id="resultado" class="flex h-full w-full items-center justify-center">
+        <div class="m-5 flex flex-col h-2/3 w-2/3 bg-gray-200 rounded-xl shadow-lg justify-center">
+            <label for="final" class="text-center text-xl mb-3">Resultado:</label>
+            <input type="text" class="mx-auto w-2/3" readonly name="final" id="final">
+        </div>
+        
+    </div>
     <footer class="bg-black h-[60px]">
         <p class="text-center pt-[20px] text-white">Direitos reservados a &copy; Matheus Saraiva.</p>
     </footer>
