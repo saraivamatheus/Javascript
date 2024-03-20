@@ -4,54 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-
-        body{
-            background-color: rgb(29, 29, 173);
-        }
-
-        h1, h2{
-            text-align: center;
-            font-style: italic;
-        }
-
-        main{
-            display: block;
-            margin: auto;
-            background-color: white;
-            box-shadow: 3px 3px 6px solid black;
-            border-radius: 8px;
-            width: 500px;
-        }
-        
-        div{
-            display: flex;
-            justify-content: center;
-        }
-
-        img{
-            border-radius: 100px;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <header>
-        <h1>Hora do dia</h1>
-    </header>
+    <style>
+        body{
+            height: 100vh;
+        }
+    </style>
+    <div class="w-full h-full bg-slate-200 grid grid-cols-2">
+        <div class="bg-slate-400 text-center">
+            <h1 class="text-3xl font-bold text-slate-600">Pesquisa:</h1>
 
-    <main>
-        <div>
-            <p>Agora são   horas</p>
-            
+            <input type="text" class="w-1/2 p-2 text-slate-400 rounded-md mt-10" autofocus onkeyup="pesquisa(this)">
         </div>
-    </main>
 
-    <footer>
-        <h2>© Matheus Saraiva</h2>
-    </footer>
+        <div class="bg-white px-10 py-5">
+            <div id="listafilmes" class="grid grid-cols-2">
+                <div id="1" class="flex shadow-lg px-5 py-2 rounded-md">
+                    <div id="fotofilme">
+                        <img width="100" src="imagens/Screenshot_67.png" alt="imagem do filme duna">
+                    </div>
+                    <div id="dadosfilme">
+                        <h1 class="text-3xl text-slate-400 px-2 py-4">Duna</h1>
+                        <p class="text-slate-500 px-2 py-4">dados do filme</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
+        function pesquisa(a){
+            console.log(a.value);
+        }
 
+        var listafilmes = {
+            lista: [
+                {},
+                {},
+                {},
+                
+            ]
+
+        };
 
     </script>
 </body>
