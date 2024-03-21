@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>  
+    <style>
+        body{
+            height: 100vh;
+        }
+    </style>
+
+    <script>
+        var contador = 0;
+        function adicionar(){
+            contador++;
+            base = {
+                usuarios: {
+                    nome: [],
+                    nascimento: []
+                }
+            }
+            this.nome += document.getElementById('nome').value;
+            this.nascimento += document.getElementById('nascimento').value;
+        }
+        function exibir(){
+            var paragrafo = document.getElementById('resultado');
+            for(contador = 0; contador < this.nome.length; contador++){
+            paragrafo.innerHTML += `Usuário ${contador}: nome: ${nome[contador]} Ano de nascimento: ${nascimento[contador]}`;
+            }
+        }
+    </script>
+
+    <div id="container" class="w-full h-full grid grid-cols-2">
+        <div id="esquerda" class="bg-slate-300 text-center">
+            <h1 class="text-3xl p-3">Cadastro de cliente</h1>
+            <label class="text-lg pr-3 " for="nome">Nome:</label>
+            <input class="bg-slate-100 rounded-lg shadow-lg w-[300px] h-[30px] mb-3" type="text" name="nome" id="nome" autofocus>
+            <br>
+            <label class="text-lg pr-3 " for="nascimento">Ano de nascimento:</label>
+            <input class="bg-slate-100 rounded-lg shadow-lg w-[300px] h-[30px] mb-3" type="number" name="nascimento" id="nascimento">
+            <br>
+            <input class="bg-green-500 shadow-lg rounded-lg hover:bg-green-400 active:bg-green-300 p-2" type="button" value="Adicionar" onclick="adicionar()">
+        </div>
+        <div id="direita" class="font-mono text-lg text-center bg-green-300">
+            <p id="resultado" class="font-bold"></p>
+        </div>
+    </div>
+    
+</body>
+</html>
