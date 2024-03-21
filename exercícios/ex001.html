@@ -12,36 +12,37 @@
             height: 100vh;
         }
     </style>
-    <div class="w-full h-full bg-slate-200 grid grid-cols-2">
-        <div class="bg-slate-400 text-center">
-            <h1 class="text-3xl font-bold text-slate-600">Pesquisa:</h1>
-
-            <input type="text" class="w-1/2 p-2 text-slate-400 rounded-md mt-10" autofocus onkeyup="pesquisa(this)">
-        </div>
-
-        <div class="bg-white px-10 py-5">
-            <div id="listafilmes" class="grid grid-cols-2">
-                <div id="1" class="flex shadow-lg px-5 py-2 rounded-md">
-                    <p id="texto">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam perspiciatis libero commodi qui explicabo, laborum sed in doloremque nostrum praesentium cupiditate obcaecati iure, facere ipsam fugiat iusto similique corporis aut?
-                    </p>
-                    <p class="text-bold">
-                        Existe ou não no texto?
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script>
-        var texto = document.getElementById('texto');
-        
-        function pesquisa(a){
-            console.log(a.value);
+
+        function procurar(){
+            var palavraprocuradora = document.getElementById('navegador').value;
+            var texto = document.getElementById('texto').innerText;
+            var paragrafo = document.getElementById('resultado');
+            if(texto.includes(palavraprocuradora)){
+                paragrafo.innerHTML = "Sim!";
+            }else{
+                paragrafo.innerHTML = "Não!";
+            }
+
         }
-
-        
-
     </script>
+
+    <div id="container" class="w-full h-full grid grid-cols-2">
+        <div id="esquerda" class="bg-slate-300 text-center">
+            <h1 class="text-3xl p-3">Veja se tem a palavra no texto</h1>
+            <input type="text" name="navegador" id="navegador" class="w-2/3 rounded-xl shadow-lg mt-10" onkeyup="procurar()" autofocus>
+        </div>
+        <div id="direita" class="font-mono text-lg text-center bg-green-300">
+            <p id="texto" class="m-3">O consumismo, impulsionado pelo capitalismo, desempenha um papel significativo na condução da poluição. A produção e o transporte de mercadorias resultam na poluição do ar, da água e do solo, com a queima de combustíveis fósseis libertando dióxido de carbono e outros gases com efeito de estufa. À medida que a procura dos consumidores por bens e serviços continua a aumentar, também aumenta a poluição associada à sua produção e eliminação. Este consumo desenfreado, alimentado pelo capitalismo, tem graves impactos ambientais, tornando necessária a implementação de alternativas e soluções sustentáveis.
+
+                O impacto do capitalismo nas regulamentações ambientais não pode ser ignorado. As leis e regulamentações ambientais são frequentemente influenciadas por interesses capitalistas, com as empresas a fazer lobby contra regulamentações rigorosas que poderiam potencialmente impactar os seus lucros. O sistema capitalista dá prioridade ao crescimento económico em detrimento da protecção ambiental, levando a uma situação em que a vida física e espiritual dos seres humanos está associada à poluição da natureza. A progressão das concepções de terra é um exemplo claro do impacto do capitalismo nos activos ambientais, com a terra a ser tratada como uma mercadoria a ser comprada e vendida com fins lucrativos.
+                
+                Para combater o impacto negativo do capitalismo e do consumismo no ambiente, devem ser implementadas alternativas e soluções sustentáveis. Isto inclui a reutilização de recursos ambientais, como a recolha seletiva, e a utilização de meios de transporte não poluentes. As autoridades públicas devem também desempenhar um papel na indução do processo de redução da poluição, especialmente nas grandes metrópoles. No entanto, é importante notar que algumas práticas sustentáveis anunciadas pelas empresas são meramente greenwashing, com produtos e serviços comercializados como sustentáveis, apesar de terem poucos ou nenhuns benefícios reais de sustentabilidade. Para enfrentar verdadeiramente os danos causados pela poluição, é necessária uma abordagem holística, incluindo a eliminação responsável de resíduos tóxicos.</p>
+                <br>
+                <p class="font-bold">A palavra existe ou não?</p>
+                <p id="resultado"></p>
+        </div>
+    </div>
 </body>
 </html>
