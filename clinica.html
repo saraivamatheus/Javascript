@@ -15,21 +15,22 @@
 
     <script>
         var contador = 0;
-        function adicionar(){
-            contador++;
-            base = {
+        base = {
                 usuarios: {
                     nome: [],
                     nascimento: []
                 }
             }
+        function adicionar(){
             this.nome += document.getElementById('nome').value;
             this.nascimento += document.getElementById('nascimento').value;
+            contador++;
+            exibir();
         }
         function exibir(){
             var paragrafo = document.getElementById('resultado');
             for(contador = 0; contador < this.nome.length; contador++){
-            paragrafo.innerHTML += `Usuário ${contador}: nome: ${nome[contador]} Ano de nascimento: ${nascimento[contador]}`;
+            paragrafo.innerHTML += `Usuário ${contador + 1}: nome: ${nome[contador]} Ano de nascimento: ${nascimento[contador]} <br>`;
             }
         }
     </script>
