@@ -17,22 +17,25 @@
         var contador = 0;
         base = {
                 usuarios: {
-                    nome: [],
-                    nascimento: []
+                    nome: ["roberto"],
+                    nascimento: [2000]
                 }
             }
         function adicionar(){
-            this.nome += document.getElementById('nome').value;
-            this.nascimento += document.getElementById('nascimento').value;
+            base.usuarios.nome[contador] = document.getElementById('nome').value;
+            base.usuarios.nascimento[contador] = document.getElementById('nascimento').value;
             contador++;
             exibir();
         }
+
         function exibir(){
             var paragrafo = document.getElementById('resultado');
-            for(contador = 0; contador < this.nome.length; contador++){
-            paragrafo.innerHTML += `Usuário ${contador + 1}: nome: ${nome[contador]} Ano de nascimento: ${nascimento[contador]} <br>`;
-            }
+            this.usuarios.map(function(){
+                paragrafo.innerHTML += `Usuário ${passo + 1}: nome: ${this.nome} Ano de nascimento: ${this.nascimento} <br>`;
+            })
         }
+
+        
     </script>
 
     <div id="container" class="w-full h-full grid grid-cols-2">
