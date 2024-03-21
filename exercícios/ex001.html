@@ -22,32 +22,25 @@
         <div class="bg-white px-10 py-5">
             <div id="listafilmes" class="grid grid-cols-2">
                 <div id="1" class="flex shadow-lg px-5 py-2 rounded-md">
-                    <div id="fotofilme">
-                        <img width="100" src="imagens/Screenshot_67.png" alt="imagem do filme duna">
-                    </div>
-                    <div id="dadosfilme">
-                        <h1 class="text-3xl text-slate-400 px-2 py-4">Duna</h1>
-                        <p class="text-slate-500 px-2 py-4">dados do filme</p>
-                    </div>
+                    <p id="texto">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam perspiciatis libero commodi qui explicabo, laborum sed in doloremque nostrum praesentium cupiditate obcaecati iure, facere ipsam fugiat iusto similique corporis aut?
+                    </p>
+                    <p class="text-bold">
+                        Existe ou não no texto?
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
+        var texto = document.getElementById('texto');
+        
         function pesquisa(a){
             console.log(a.value);
         }
 
-        var listafilmes = {
-            lista: [
-                {},
-                {},
-                {},
-                
-            ]
-
-        };
+        
 
     </script>
 </body>
