@@ -15,24 +15,24 @@
 
     <script>
         var contador = 0;
-        base = {
-                usuarios: {
-                    nome: ["roberto"],
-                    nascimento: [2000]
-                }
-            }
+        var usuarios = {
+            nome: ["roberto"],
+            nascimento: [2000]
+        }
         function adicionar(){
-            base.usuarios.nome[contador] = document.getElementById('nome').value;
-            base.usuarios.nascimento[contador] = document.getElementById('nascimento').value;
+            usuarios.nome[contador] = document.getElementById('nome').value;
+            usuarios.nascimento[contador] = document.getElementById('nascimento').value;
             contador++;
             exibir();
         }
-
+        var count = 0;
         function exibir(){
             var paragrafo = document.getElementById('resultado');
-            this.usuarios.map(function(){
-                paragrafo.innerHTML += `Usuário ${passo + 1}: nome: ${base.usuarios.nome} Ano de nascimento: ${base.usuarios.nascimento} <br>`;
+            paragrafo.innerHTML = "";         
+            usuarios.nome.map(function(){
+                paragrafo.innerHTML += `Usuário ${count + 1}: nome: ${usuarios.nome[count]} Ano de nascimento: ${usuarios.nascimento[count]} <br>`;
             })
+            count++;
         }
 
         
