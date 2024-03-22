@@ -31,7 +31,7 @@
         function exibir(){
             var paragrafo = document.getElementById('resultado');
             this.usuarios.map(function(){
-                paragrafo.innerHTML += `Usuário ${passo + 1}: nome: ${this.nome} Ano de nascimento: ${this.nascimento} <br>`;
+                paragrafo.innerHTML += `Usuário ${passo + 1}: nome: ${base.usuarios.nome} Ano de nascimento: ${base.usuarios.nascimento} <br>`;
             })
         }
 
