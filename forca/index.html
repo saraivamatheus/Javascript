@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <title>Jogo da forca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body onload="informartentativas()">
+    <script>
+        var tentativas = 10;
+        var palavradigitada = "";
+        var palavraselecionada = "";
+        var letras = "";
+        var acerto = [];
+
+        function palavra(){
+            var nome = window.prompt();
+            definirpalavra(nome);
+        }
+
+        function definirpalavra(palavra){
+            tentativas = 10;
+            palavraselecionada = palavra.toUpperCase();
+            palavradigitada = palavraselecionada;
+            letras = palavraselecionada.split("");
+            acerto = [...letras];
+            acerto.fill("__");
+            informapalavra();
+        }
+
+        function informartentativas(){
+
+            document.getElementById('tentativas').innerHTML = ` você tem ${tentativas} tentativas! `;
+
+        }
+
+        function checkLetra(letra){
+            letras.map(function(item,index){
+                if(letras[index].includes(letra)){
+                    acerto[index] = letra;
+                } else{
+                    acerto[index] = "__";
+                }
+            });
+            tentativas--;
+            informartentativas();
+            informapalavra();
+        }
+
+        function informapalavra(palavra){
+            document.getElementById('palavra').innerHTML = `<p class="text-bold"> ${acerto} </p>`;
+        }
+
+    </script>
+    <div
+      id="resultado"
+      class="w-full flex flex-col items-center justify-center pt-10"
+    >
+      <h1 class="text-slate-500 font -bold text-3x1 mb-5">
+        Escolha a letra, para achar a palavra
+      </h1>
+      <div
+        id="tentativas"
+        class="text-white bg-indigo-400 px-5 py-2 rounded-md"
+      >
+        voce tem X tentativas
+      </div>
+      <div
+        class="grid grid-cols-6 w-1/3 gap-3 text-center mx-10 my-10"
+      >
+        <div
+          class="w-10 h-10 text-2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('A')"
+        >
+          A
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('B')"
+        >
+          B
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('C')"
+        >
+          C
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('D')"
+        >
+          D
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('E')"
+        >
+          E
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('F')"
+        >
+          F
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('G')"
+        >
+          G
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('H')"
+        >
+          H
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('I')"
+        >
+          I
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('J')"
+        >
+          J
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('K')"
+        >
+          K
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('L')"
+        >
+          L
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('M')"
+        >
+          M
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('N')"
+        >
+          N
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('O')"
+        >
+          O
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('P')"
+        >
+          P
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('Q')"
+        >
+          Q
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('R')"
+        >
+          R
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('S')"
+        >
+          S
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('T')"
+        >
+          T
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('U')"
+        >
+          U
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('V')"
+        >
+          V
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('W')"
+        >
+          W
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('X')"
+        >
+          X
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('Y')"
+        >
+          Y
+        </div>
+        <div
+          class="w-10 h-10 text 2x1 bg-slate-500 hover:bg-purple-400 cursor-pointer rounded-md hover:ring-4 hover:ring-purple-500 text-white"
+          onclick="checkLetra ('Z')"
+        >
+          Z
+        </div>
+      </div>
+      <div class="mt-10 grid grid-col-1 gap-5">
+        <div id="palavra" class="text-center">
+
+        </div>
+        <button
+          class="bg-slate-200 shandow-md roudend-md font-bold text-lg hover:bg-blue-300 hover:text-white text-slate-500 px-10 py-3 rounded-md shadow-lg"
+          onclick=""
+        >Já sabe a palavra</button>
+        <button
+          class="bg-slate-200 shandow-md roudend-md font-bold text-lg hover:bg-blue-300 hover:text-white text-slate-500 px-10 py-3 rounded-md shadow-lg"
+          onclick="palavra()"
+        >Gerar Palavra</button>
+      </div>
+    </div>
+  </body>
+</html>
