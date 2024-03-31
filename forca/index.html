@@ -37,13 +37,35 @@
             letras.map(function(item,index){
                 if(letras[index].includes(letra)){
                     acerto[index] = letra;
-                } else{
-                    acerto[index] = "__";
-                }
+                } 
             });
             tentativas--;
             informartentativas();
             informapalavra();
+            terminarjogo();
+        }
+
+        function terminarjogo(){
+          if (tentativas == 0 || !(acerto.includes("__"))){
+            if (acerto.includes("__")){
+              document.getElementById('acerto').innerHTML = `<marquee> Errou! </marquee>`;
+              window.alert("è uma pena, não foi dessa vez...");
+            } else {
+              document.getElementById('acerto').innerHTML = `<marquee> Acertou! </marquee>`;
+              window.alert("Você é brabo cara!");
+            }
+          }
+        }
+
+        function sabeapalavra(){
+          palavradigitada = window.prompt('Qual é a palavra?');
+          if(palavradigitada.toUpperCase() == palavraselecionada){
+            acerto = [...letras];
+
+          }
+          tentativas = 0;
+          informapalavra();
+          terminarjogo();
         }
 
         function informapalavra(palavra){
@@ -230,12 +252,15 @@
         </div>
         <button
           class="bg-slate-200 shandow-md roudend-md font-bold text-lg hover:bg-blue-300 hover:text-white text-slate-500 px-10 py-3 rounded-md shadow-lg"
-          onclick=""
+          onclick="sabeapalavra()"
         >Já sabe a palavra</button>
         <button
           class="bg-slate-200 shandow-md roudend-md font-bold text-lg hover:bg-blue-300 hover:text-white text-slate-500 px-10 py-3 rounded-md shadow-lg"
           onclick="palavra()"
         >Gerar Palavra</button>
+        <div id="acerto" class="text-center">
+
+        </div>
       </div>
     </div>
   </body>
