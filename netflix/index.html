@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+</script>
+<style> 
+
+    html, body{
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav, header{
+        display: flex;
+        width: 100%;
+        height: 45px;
+        background-color: black;
+        position: fixed;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    ul{
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        list-style-type: none;
+        display: flex;
+    }
+
+    li{
+        width: 20%;
+        margin: 0px 40px;
+        color: red;
+    }
+
+    #logo{
+        width: 20%;
+        margin: auto;
+    }
+
+    main{
+        width: 100%;
+        text-align: center
+    }
+
+
+    #procura{
+        font-size: xx-large;
+        margin: 100px auto;
+        width: 60%;
+        height: 70px;
+        text-align: center;
+        color: red;
+    }
+
+    .filmes{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 2;
+        width: 100%;
+        height: 400px;
+        background-color: black;
+        margin: 30px auto;
+    }
+
+    .item{
+        height: 70%;
+        margin: auto;
+    }
+
+    div{
+        color: white;
+    }
+
+
+</style>
+<body>
+    <header>
+        <nav>
+            <img src="" alt="logo" id="logo">
+            <ul>
+
+                <li><a href="">Home</a></li>
+                <li><a href="">Catálogo</a></li>
+                <li><a href="">Produtos</a></li>
+                <li><a href="">Sobre nós</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <input type="text" name="" id="procura" onkeyup="procura()">
+        <h2>Filmes de suspense:</h2>
+        <div class="filmes" id="suspense">
+            <div class="item">
+                <p></p>
+                <img src="" alt="">
+            </div>
+            <div class="item">
+                <p></p>
+                <img src="" alt="">
+            </div>
+            <div class="item">
+                <p></p>
+                <img src="" alt="">
+            </div>
+            <div class="item">
+                <p></p>
+                <img src="" alt="">
+            </div>
+            <div class="item">
+                <p></p>
+                <img src="" alt="">
+            </div>
+        </div>
+        <h2>Filmes de comédia:</h2>
+        <div class="filmes" id="comedia">
+            <div class="item">
+                <p></p>
+                <img src="" alt="">
+            </div>
+            <div class="item">
+                <p></p>
+                <img src="" alt="">
+            </div>
+            <div class="item">
+                <p></p>
+                <img src="" alt="">
+            </div>
+            <div class="item">
+                <p></p>
+                <img src="" alt="">
+            </div>
+            <div class="item">
+                <p></p>
+                <img src="" alt="">
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
