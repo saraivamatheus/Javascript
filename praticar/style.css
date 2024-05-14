@@ -1,0 +1,56 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+a:active{
+    color: blueviolet;
+}
+
+ul{
+    list-style-type: none;
+}
+
+li{
+    margin: auto 20px;
+    color: red;
+    font-size: larger;
+}
+
+p{
+    color: white;
+}
+
+nav{
+    position: fixed;
+}
+
+header{
+    position: sticky;
+    top:0;
+}
+
+footer{
+    position: sticky;
+    top:100%;
+    left: 0%;
+}
+    
+#botao{
+    cursor: pointer;
+}
+
+#botao:active{
+    text-decoration: underline;
+    color: black;
+    background-color: rgb(63, 9, 9);
+}

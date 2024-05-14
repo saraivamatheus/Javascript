@@ -8,26 +8,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header class="h-[125px]">
         <nav class="flex items-center justify-center w-full h-[40px] bg-black ">
             <ul class="flex ">
                 <li><a href="">Home</a></li>
-                <li><a href="">Log in</a></li>
+                <li><a href="">Login</a></li>
                 <li><a href="">Filmes</a></li>
                 <li><a href="">Sobre nós</a></li>
             </ul>
         </nav>
-        <div class="w-full h-[200px] flex items-center justify-center"><input type="text" onkeyup="procurar(event)" name="procura" id="procura" class="rounded-xl text-3xl w-1/3 h-[80px] bg-gray-200" placeholder="Pressione enter para fazer a busca"></div>
     </header>
-
-    <main>
+    <h2 class="text-4xl text-center">Login</h2>
+    <main class="w-full h-[500px] bg-gray-400 flex items-center justify-center">
+        <div class="w-1/4 h-[400px] flex flex-col items-center bg-black rounded-xl">
+            <p class="text-xl my-3">Faça o seu login!</p>
+            <input class="my-3 w-1/2 h-[30px]" type="text" name="loginuser" id="loginuser" placeholder="Nome" >
+            <input class="mb-3 w-1/2 h-[30px]" type="password" name="loginsenha" id="loginsenha" placeholder="Senha">
+            <input id="botao" class="bg-red-500 rounded-xl w-1/2 h-[30px]" type="button" value="Verifique seus dados">
+        </div>
     </main>
 
     <footer class="flex items-center justify-center w-full h-[40px] bg-black">
         <p class="">Todos os direitos reservados a Matheus Saraiva!</p>
     </footer>
+
     <script src="script.js"></script>
 
-    
 </body>
 </html>
