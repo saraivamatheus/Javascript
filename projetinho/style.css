@@ -1,0 +1,61 @@
+
+html, body{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    background: url('imagem.jpg') no-repeat center top;
+    background-size: cover;
+}
+
+#externa{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#interna{
+    height: 450px;
+    width: 600px;
+    background-color: blue;
+    border-radius: 8px;
+}
+
+h2{
+    text-align: center;
+
+}
+
+input{
+    display: block;
+    padding: 10px 0px;
+    width: 80%;
+    margin: 10px auto;
+    border-radius: 8px;
+}
+
+#botao{
+    width: 30%;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: rgb(185, 185, 185);
+}
+
+#botao:hover{
+    background-color: gray;
+}
+
+#botao:active{
+    background-color: azure;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
